@@ -1,0 +1,77 @@
+Capsule_LPI source code
+Need Linux operating system.
+numpy >=1.16.4
+pytorch >= 1.5.0 (cuda)
+torchversion >= 0.6.0
+tqdm >=4.32.1
+
+CONTAINS:
+1. Data set
+Location:
+a.interacting pairs (positive data) and not interacting pairs (negtive data) :     Capsule_LPI_sources/data/default_data/data_set/pairs_data
+b.lncRNA and protein fasta file (containing the sequence that is used in pairs):    Capsule_LPI_sources/data/default_data/data_set/fasta_data
+
+2. Source code for feature extraction of sequence feature, motif information, physicochemical properties and secondary structure feature. 
+Location:
+Capsule_LPI_source/features_script
+
+3. Source code for Capsule_LPI model
+Location:
+Capsule_LPI_source/capsnet.py
+
+4. predict and retrain function
+Location:
+Capsule_LPI_source/main.py
+
+
+
+How to use predict and retrain function?
+0.Make sure the file under "Capsule_LPI_sources/data/tools" has sufficient permissions.
+chmod -R 777 tools
+
+1. Prepare fasta files that contain all the lncRNAs and proteins' sequences used in prediction.(See example at Capsule_LPI_sources\data\user_data\fasta_data)
+And if you want to retrain the model, the fasta files also need contain all the lncRNAs and proteins'sequences used in retrain.
+Put them into  Capsule_LPI_sources\data\user_data\fasta_data
+
+2. If you want to retrain the model, you need to prepare retrain pairs files. (See example at Capsule_LPI_sources\data\user_data\retrain_pairs_data)
+Put them into Capsule_LPI_sources\data\user_data\retrain_pairs_data
+
+3. If you want to make prediction, the lncRNAs and proteins in rna_fasta_file and pro_fasta_file (prepare in step 1), respectively, will form lncRNA-protein pairs one by one.
+You can also assign specific pairs to predict. In this way, you need to prepare predict pairs file. (See example at Capsule_LPI_sources\data\user_data\predict_pairs_data)
+Put it into Capsule_LPI_sources\data\user_data\predict_pairs_data
+
+4. Adjust the parameters at "if __name__ == '__main__':" in main.py to work.
+For example:
+If you want to make prediction, set the parameters as follow:
+if __name__ == '__main__':
+    # Prepare fasta files of lncRNAs and proteins that contain all the lncRNAs and proteins used in prediction and
+    # retraining.(See README)
+    rna_fasta_file_name = "example_lncRNA.fa"  # Enter the name of your file
+    pro_fasta_file_name = "example_protein.fa"  # Enter the name of your file
+
+
+    # If you want to retrain the model, you need to prepare retrain pairs files. (See README)
+    RETRAIN = False  # choose: True, False
+    retrain_interacting_pairs_file_name = "example_interacting_pairs"  # Enter the name of your file
+    retrain_uninteracting_pairs_file_name = "example_negative_pairs"  # Enter the name of your file
+
+
+    # If you want to make prediction, set "PREDICT = True". And the lncRNAs and proteins in "rna_fasta_file_name" and
+    # "pro_fasta_file_name", respectively, will form lncRNA-protein pairs one by one.
+    PREDICT = True  # choose: True, False
+    predict_output_file_name = "example_output"  # Enter the name of your file
+    USE_RETRAIN_MODEL = False   # choose: True, False  (If you have retrained the model, you can choose True.)
+    # You can also assign specific pairs to predict. In this way, you need to prepare predict pairs file. (See README)
+    predict_designated_pairs = False
+    predict_pairs = "example_predict_pairs"  # Enter the name of your file
+
+
+    # When a complete feature extraction is performed once, the feature file is saved. This option can be set to False
+    # to accelerate prediction or retrain.
+    EXTRACT_FEATURES = True  # choose: True, False
+
+
+Note:
+1. When you encounter an error message: "No such file or directory: './data/user_data/features_data/features_workdir/tmp.rna.file.0.r_score' "
+Make sure the file under "Capsule_LPI_sources/data/tools" has sufficient permissions.
+chmod -R 777 tools
