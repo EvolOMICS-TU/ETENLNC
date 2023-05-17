@@ -295,7 +295,7 @@ Rscript tximport_deseq.R $base $run vst
 
 #Fixes left shift
 mv -v "$run"\ .csv bak_"$run"\ .csv
-echo -n "Gene_ID", > $run.csv
+echo -n "Transcript_ID", > $run.csv
 cat bak_"$run"\ .csv >> $run.csv
 
 #Filters significant DEGs
@@ -319,7 +319,7 @@ Rscript tximport_deseq.R $base3 $run varianceStabilizingTransformation
 
 #Fixes left shift
 mv -v "$run"\ .csv bak_"$run"\ .csv
-echo -n "Gene_ID", > $run.csv
+echo -n "Transcript_ID", > $run.csv
 cat bak_"$run"\ .csv >> $run.csv
 
 #Filters significant DEGs
