@@ -28,8 +28,6 @@ echo "
 run=
 path="/$run/"
 
-script /$run/log.txt
-
 #Please enter your raw reads (.fastq.gz) location
 fastq_query=
 
