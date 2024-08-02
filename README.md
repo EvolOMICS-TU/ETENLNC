@@ -12,16 +12,16 @@ ETENLNC has been successfully installed in your system. Please refer to the next
 
 ## Input Files
 The following inputs are required for running ETENLNC:
-F1. Paired-ended FASTQ files
-F2. A reference-genome for the concerned species (.fasta or .fa format)
-F3. A reference annotation containing all genes and transcripts (.gtf or .gff3 format)
-F4. Known lncRNA sequences (.fasta or .fa format)
-F5. Known protein-coding transcripts (mRNA) sequences (.fasta or .fa format)
-F6. A metadata file having sample-condition information (Samples.txt)
+* F1. Paired-ended FASTQ files
+* F2. A reference-genome for the concerned species (.fasta or .fa format)
+* F3. A reference annotation containing all genes and transcripts (.gtf or .gff3 format)
+* F4. Known lncRNA sequences (.fasta or .fa format)
+* F5. Known protein-coding transcripts (mRNA) sequences (.fasta or .fa format)
+* F6. A metadata file having sample-condition information (Samples.txt)
 
 Additional Files for downstream analyses:
-F7. miRNA sequences (.fasta or .fa format)
-F8. protein sequences (.fasta or .fa format)
+* F7. miRNA sequences (.fasta or .fa format)
+* F8. protein sequences (.fasta or .fa format)
 
 ## Scripts (for Docker)
 1. ETENLNC_docker.sh: Runs entire ETENLNC pipeline and all additional downstream modules. Requires all files (F1-F8)
