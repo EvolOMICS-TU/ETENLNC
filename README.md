@@ -7,7 +7,7 @@ ETENLNC (End-To-End-Novel-NonCoding) lncRNA identification and analysis framewor
 ETENLNC can be easily installed and run through a Docker image. Please follow the steps below:
 1. Install Docker (https://www.docker.com/products/docker-desktop/)
 2. Open up a shell with Docker running in the background (Powershell/cmd for windows, zsh for Mac and terminal for Linux/UNIX)
-3. Type the following:
+3. Pull the Docker image using the command:
    `docker pull prangannath/etenlnc:latest`
 4. Sit back, relax. Let it download.
 ETENLNC has been successfully installed in your system. Please refer to the next section for instructions on running ETENLNC.
@@ -31,6 +31,18 @@ Additional Files for downstream analyses:
 * ETENLNC_docker_DO.sh: Runs quantification, differential expression of known lncRNAs, mRNAs and downstream predictions to construct networks. Requires files F1, F4-F8
 * ETENLNC_docker_IDE.sh: Runs identification of novel lncRNAs, quantification and differential expression of known and novel lncRNAs, mRNAs. Requires files F1-F6
 * ETENLNC_docker_IO.sh: Runs identification of novel lncRNAs alone. Requires files F1-F4
+
+## Running ETENLNC
+ETENLNC can be run using the Docker image as follows:
+1. Organize all files required for the run under a working directory
+2. Open up a shell in the working directory, with Docker running in the background (Powershell/cmd for windows, zsh for Mac and terminal for Linux/UNIX)
+3. Run the Docker image using the command:
+`docker run -v $(pwd):/user_data/ -w /user_data/ -it prangannath/etenlnc:latest sh`
+4. Your working directory has now been mounted under /user_data/. All file paths from now on will be relative to /user_data/ (eg., if you have your ref_genome.fa in the root of the working directory, the path would be modified as /user_data/ref_genome.fa)
+5. Run the required ETENLNC docker script using command:
+`bash ETENLNC_docker.sh`
+6. Enter a suitable RUN ID (run identifier) and follow the instructions to provide your file paths (P.S: The paths must be relative to the docker mounting directory /user_data/)
+7. After the run has completed, a directory by your RUN ID name will be generated in your working directory. All results can be found inside this results directory.
 
 ## Citation
 If you have used ETENLNC for your research, please cite: 
