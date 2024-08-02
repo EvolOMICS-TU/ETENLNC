@@ -1,3 +1,5 @@
+![ETENLNC workflow diagram.] (https://ars.els-cdn.com/content/image/1-s2.0-S1476927124001282-ga1_lrg.jpg)
+
 # ETENLNC
 ETENLNC (End-To-End-Novel-NonCoding) lncRNA identification and analysis framework
 
