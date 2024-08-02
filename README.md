@@ -1,7 +1,7 @@
-![ETENLNC workflow diagram.](https://github.com/EvolOMICS-TU/ETENLNC/blob/main/ETENLNC.svg?raw=TRUE)
-
 # ETENLNC
 ETENLNC (End-To-End-Novel-NonCoding) lncRNA identification and analysis framework
+
+![ETENLNC workflow diagram.](https://github.com/EvolOMICS-TU/ETENLNC/blob/main/ETENLNC.svg?raw=TRUE)
 
 ## Installation
 ETENLNC can be easily installed and run through a Docker image. Please follow the steps below:
