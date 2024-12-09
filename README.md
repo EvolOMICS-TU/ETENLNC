@@ -44,6 +44,11 @@ ETENLNC can be run using the Docker image as follows:
 6. Enter a suitable RUN ID (run identifier) and follow the instructions to provide your file paths (P.S: The paths must be relative to the docker mounting directory /user_data/)
 7. After the run has completed, a directory by your RUN ID name will be generated in your working directory. All results can be found inside this results directory.
 
+## Demo Data
+Please find the sample/demo data for ETENLNC here: 
+`https://zenodo.org/records/14325721?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImVmYTllNWJkLWE4ODUtNGM3OC05YTAxLWM4ZDk5YTljZDZjMCIsImRhdGEiOnt9LCJyYW5kb20iOiI4M2I1YjBlZDQ4MmUyZTIxNDg2YmI0YTFkMWE5MTI1OCJ9.HeB3WrsPduNzMyXjH4x5HfCgmIp4NzYv0P_11XU9lcXC_ZxEaVndP-kD0LDkxwufHVNlroeAhdK33PR51F6jnw`
+A detailed guide on running ETENLNC using the demo data can be found in the ETENLNC manual (supplementary to our publication)
+
 ## Citation
 If you have used ETENLNC for your research, please cite: 
 ***Nath P, Bhuyan K, Bhattacharyya DK, Barah P. ETENLNC: An end to end lncRNA identification and analysis framework to facilitate construction of known and novel lncRNA regulatory networks. Comput Biol Chem. Published online June 30, 2024. doi:10.1016/j.compbiolchem.2024.108140***
